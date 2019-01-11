@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Signika|Thasadith" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <script type="text/javascript" src="public/js/utilities.js"></script>
+    <script type="text/javascript" src="public/js/main.js"></script>
+    <title>Tuitui Blog</title>
+  </head>
+  <body>
+    <main class="container bgopaque flex">
+      <section id="section_billet" class="clear">
+        <?php include "template/home.phtml"; ?>
+      </section>
+      <div  id="aside" class="col-one-third clear">
+          <form class="connexion" action="src/repository/connexion.php" method="post">
+            <fieldset>
+              <legend>Connexion</legend>
+              <ul>
+                <li>
+                  <label for="pseudo">
+                  <input type="text" name="pseudo" placeholder="pseudo" >
+                  </label>
+                </li>
+                <li>
+                  <label for="pw">
+                  <input type="password" name="pw" placeholder="password"  >
+                  </label>
+                </li>
+                <li>
+                  <button type="submit" name="button">Valider</button>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+          <a href="register.php"><h4>Devenir membre</h4></a>
+          <div class="search">
+            <label for=""><h3>Rechercher</h3></label>
+            <input type="text" name="name" value="">
+          </div>
+          <div class="categ">
+            <h3>Catégorie</h3>
+            <p></p>
+          </div>
+        </div>
+    </main>
+  </body>
+
+</html>

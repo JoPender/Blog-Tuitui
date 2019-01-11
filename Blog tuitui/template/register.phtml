@@ -1,0 +1,41 @@
+<?php include 'src/repository/displayBillets.php'; ?>
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Signika|Thasadith" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <script type="text/javascript" src="public/js/utilities.js"></script>
+    <script type="text/javascript" src="public/js/main.js"></script>
+    <title>Tuitui Blog</title>
+  </head>
+  <body>
+    <main class="container">
+      <div id="newBillForm">
+        <form class="" action='src/repository/insertUser.php' method="post" enctype="multipart/form-data">
+          <fieldset class="col-two-third">
+              <legend><h2>Rejoignez la communauté</h2></legend>
+              <input type="text" name="nom"  placeholder="Nom">
+              <input type="text" name="prenom" placeholder="Prenom"/>
+              <input type="text" name="pseudo" placeholder="Pseudo"/>
+              <input type="email" name="email" placeholder="@"/>
+              <input type="file" name="image" value="" src=""/>
+              <input type="password" name="pw" placeholder="Mot de passe">
+              <label for="save"></label>
+              <button type="submit" name="button" value="">Enregistrer</button>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
