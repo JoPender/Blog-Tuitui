@@ -3,10 +3,7 @@
  * Import de la bibliothèque de fonctions gérant les requêtes SQL
  */
 include "db.php";
-/*
- * Connexion à la base de données
- */
-$db = openDatabase('blog1','root','troiswa');
+
 
 $surname = $_POST['nom'];
 $firstname = $_POST['prenom'];

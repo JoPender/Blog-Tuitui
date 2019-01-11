@@ -8,7 +8,7 @@ include "db.php";
 /*
  * Connexion à la base de données
  */
-$db = openDatabase('blog1','root','troiswa');
+$db = openDatabase('blog','root','');
 
 $displayBillets = $db -> prepare
 ('
@@ -16,8 +16,7 @@ $displayBillets = $db -> prepare
   FROM billet as b
   INNER join utilisateur as ut on ut.id = b.auteur
   INNER join categorie as cat on cat.id = b.categorie
-  ORDER BY b.date_publication ASC
-
+  ORDER BY b.date_publication DESC
 ');
 
 $displayBillets -> execute();

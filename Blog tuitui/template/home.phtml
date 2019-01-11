@@ -6,10 +6,8 @@
   <article id="billet">
     <div>
       <h2 class="title_article"><a href="billet.php?id=<?= $billet['id']; ?>"><?= $billet['titre']; ?></a></h2>
-      <!--<img src="?= $image = $billet['titre'].'.jpg'; file_put_contents('public/images/voyages'.$image,
-                stripslashes($billet['image'])); echo'./public/images/voyages'.$billet['titre'].'.jpg'; ?>"
-                alt="?= $billet['titre']; ?>">-->
-      <img src="public/images/voyages/<? $billet['image']?>" alt="<?= $billet['titre']; ?>"/>
+
+      <img src="public/images/voyages/<?= $billet['image'];?>" alt="<?= $billet['titre']; ?>"/>
     </div>
     <div class="billet_content">
         <div class="info_billet">

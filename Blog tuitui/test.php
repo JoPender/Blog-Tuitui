@@ -1,2 +1,0 @@
-<?php test ?>
-ecrire ici

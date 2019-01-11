@@ -1,4 +1,4 @@
-<?php include 'src/repository/displayBillets.php'; ?>
+<?php include 'src/repository/categorie.php'; ?>
 
 
 <!DOCTYPE html>
@@ -25,20 +25,20 @@
         <form class="" action='src/repository/insertBillet.php' method="post" enctype="multipart/form-data">
           <fieldset class="col-two-third">
               <legend><h2>Nouveau billet</h2></legend>
-              <!--Pseudo du redacteur--
-              <input type="text" name="pseudo" id="pseudo" placeholder="pseudo" value="?php $utilisateur['pseudo'] ?"/> -->
+              <!--Pseudo du redacteur-->
+              <!--input type="text" name="pseudo" id="pseudo" placeholder="pseudo"-->
               <!--Insertion du titre-->
               <input type="text" name="titre" id="title" placeholder="Titre">
+
               <!--Selection du thème de l'article-->
-              <!--select class="categorie" name="theme">
+              <select class="categorie" name="theme">
                 <option value="">Sélectionner un thème</option>
-                ?php foreach($theme as $t){
-                  $selected = ($t['name'] == $categorie['name']) ? "selected" : "";
-                  echo "<option value = '" . $t['id'] . "' $selected >" . $t['name'] . "</option>";
-                } ?>
-              </select-->
+                <?php foreach($displayCat_result as $t): ?>
+                  <option value="<?= $t['id']; ?>"><?= $t['nom']; ?></option>
+                <?php endforeach; ?>
+              </select>
               <!--Sélection de la date-->
-              <input type="date" name="date_edition" value=""/>
+              <input type="hidden" name="date_publication" value="<?= date('Y-m-d H:i:s'); ?>"/>
               <!--Rédation de l'article-->
               <textarea name="corps_de_texte" rows="8" cols="30" value=""></textarea>
               <!--Insertion d'une image-->

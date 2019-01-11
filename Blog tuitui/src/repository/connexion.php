@@ -4,10 +4,7 @@
  * Import de la bibliothèque de fonctions gérant les requêtes SQL
  */
 include "db.php";
-/*
- * Connexion à la base de données
- */
-$db = openDatabase('blog1','root','troiswa');
+
 
 //Récupération de l'utilisateur et son pw hashé
 $pseudo = $_POST['pseudo'];
