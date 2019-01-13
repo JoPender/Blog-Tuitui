@@ -1,25 +1,28 @@
-<?php include "./src/repository/displayBillets.php";?>
+<?php include "./src/repository/displayBillets.php";
+//session_start();
+//var_dump($_SESSION);
+?>
 
 
-<?php foreach ($displayBillets_result as $billet):?>
-<div class="col-two-third clear">
-  <article id="billet">
-    <div>
-      <h2 class="title_article"><a href="billet.php?id=<?= $billet['id']; ?>"><?= $billet['titre']; ?></a></h2>
+<?php foreach ($_SESSION['display'] as $billet):?>
+  <div class="col-two-third clear">
+    <article id="billet">
+      <div>
+        <h2 class="title_article"><a href="billet.php?id=<?= $billet['id']; ?>"><?= $billet['titre']; ?></a></h2>
 
-      <img src="public/images/voyages/<?= $billet['image'];?>" alt="<?= $billet['titre']; ?>"/>
-    </div>
-    <div class="billet_content">
-        <div class="info_billet">
-          <h4><?= $billet['date_publication'] ?></h4>
-          <h4><a href="#"><?= $billet['pseudo'] ?></a></h4>
-          <h4><a href="#"><?= $billet['nom'] ?></a></h4>
-        </div>
-      <p><?= substr($billet['corps_de_texte'], 0, 100); ?></p>
-    </div>
-    <div class="readmore">
-      <a href="billet.php?id=<?= $billet['id']; ?>"><i class="fas fa-ellipsis-h"></i></a>
-    </div>
-  </article>
-</div>
+        <img src="public/images/voyages/<?= $billet['image'];?>" alt="<?= $billet['titre']; ?>"/>
+      </div>
+      <div class="billet_content">
+          <div class="info_billet">
+            <h4><?= $billet['date_publication']; ?></h4>
+            <h4><a href="#"><?= $billet['pseudo']; ?></a></h4>
+            <h4><a href="#"><?= $billet['nom']; ?></a></h4>
+          </div>
+        <p><?= substr($billet['corps_de_texte'], 0, 100); ?></p>
+      </div>
+      <div class="readmore">
+        <a href="billet.php?id=<?= $billet['id']; ?>"><i class="fas fa-ellipsis-h"></i></a>
+      </div>
+    </article>
+  </div>
 <?php endforeach; ?>

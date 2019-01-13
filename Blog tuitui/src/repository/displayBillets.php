@@ -5,22 +5,18 @@
  */
 include "db.php";
 
-/*
- * Connexion à la base de données
- */
-$db = openDatabase('blog','root','');
 
 $displayBillets = $db -> prepare
-('
-  SELECT b.*, ut.pseudo, cat.nom
+(
+  'SELECT b.*, c.nom, u.pseudo
   FROM billet as b
-  INNER join utilisateur as ut on ut.id = b.auteur
-  INNER join categorie as cat on cat.id = b.categorie
-  ORDER BY b.date_publication DESC
+  INNER JOIN categorie as c on b.categorie = c.id
+  INNER JOIN utilisateur as u on b.auteur = u.id
+  ORDER BY b.date_publication DESC;
 ');
 
 $displayBillets -> execute();
-$displayBillets_result = $displayBillets -> fetchAll(PDO::FETCH_ASSOC);
+$_SESSION['display'] = $displayBillets -> fetchAll(PDO::FETCH_ASSOC);
 
 
  ?>

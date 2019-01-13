@@ -1,3 +1,12 @@
+<?php session_start();
+if (isset ($_SESSION['connect'])) {
+  $connect = $_SESSION['connect'];
+} else {
+  $connect = false;
+}
+ // creation de la variable $_SESSION pour empêcher l'apparition d'une erreur indiquant qu'elle n'existe pas
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -21,20 +30,23 @@
       <section id="section_billet" class="clear">
         <?php include "template/home.phtml"; ?>
       </section>
+
       <div  id="aside" class="col-one-third clear">
+
+         <?php if (!$connect): ?>
           <form class="connexion" action="src/repository/connexion.php" method="post">
             <fieldset>
               <legend>Connexion</legend>
               <ul>
                 <li>
-                  <label for="pseudo">
-                  <input type="text" name="pseudo" placeholder="pseudo" >
-                  </label>
+
+                  <input type="text" name="pseudo" placeholder="pseudo" />
+
                 </li>
                 <li>
-                  <label for="pw">
+
                   <input type="password" name="pw" placeholder="password"  >
-                  </label>
+
                 </li>
                 <li>
                   <button type="submit" name="button">Valider</button>
@@ -43,6 +55,11 @@
             </fieldset>
           </form>
           <a href="register.php"><h4>Devenir membre</h4></a>
+        <?php else: ?>
+          <p>Bonjour <?php  if($_SESSION['pseudo']){
+            echo $_SESSION['pseudo'];
+          }  ?></p>
+        <?php endif; ?>
           <div class="search">
             <label for=""><h3>Rechercher</h3></label>
             <input type="text" name="name" value="">
